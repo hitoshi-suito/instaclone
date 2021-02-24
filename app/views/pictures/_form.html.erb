@@ -17,6 +17,12 @@
     <%= form.label :content %>
     <%= form.text_field :content %>
   </div>
+  <div class="picture_image">
+    <%= form.label :image %>
+    <%= image_tag(@picture.image.url) if @picture.image && @picture.image.url %>
+    <%= form.file_field :image %>
+    <%= form.hidden_field :image_cache %>
+  </div>
   <%= form.submit %>
 <% end %>
 <%= link_to '一覧に戻る', pictures_path %>

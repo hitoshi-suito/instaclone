@@ -1,3 +1,7 @@
 <h2>詳細画面</h2>
 <p>タイトル：<%= @picture.title %></p>
 <p>内容：<%= @picture.content %></p>
+<p>画像：<%= image_tag @picture.image.url %></p>
+
+
+<%= link_to '戻る', pictures_path %>
