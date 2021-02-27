@@ -1,5 +1,7 @@
 class PicturesController < ApplicationController
   before_action :set_picture, only: [:show, :edit, :update, :destroy]
+
+
   def index
     @pictures = Picture.all
   end
@@ -26,6 +28,10 @@ class PicturesController < ApplicationController
   end
 
   def edit
+    @user = @picture.user.id
+    if @user != current_user.id
+      redirect_to pictures_path
+    end
   end
 
   def update
@@ -46,6 +52,9 @@ class PicturesController < ApplicationController
     render :new if @picture.invalid?
   end
 
+
+
+
   private
   def picture_params
     params.require(:picture).permit(:title, :content, :image, :image_cache)
@@ -54,4 +63,6 @@ class PicturesController < ApplicationController
   def set_picture
     @picture = Picture.find(params[:id])
   end
+
+
 end

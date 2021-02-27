@@ -4,6 +4,10 @@
   <p>プロフィール画像：<br>
     <%= image_tag @user.image.url %></p>
 <% end %>
+
+<% if @user.id == current_user.id %>
+  <%= link_to'プロフィールを編集する', edit_user_path %>
+<% end %>
 <br>
+<%= link_to '一覧へ', pictures_path %>
 <%= link_to '投稿する', new_picture_path %>
-<%= link_to 'プロフィールを編集する', edit_user_path %>
