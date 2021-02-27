@@ -1,7 +1,7 @@
 class FavoritesController < ApplicationController
 
   def index
-    @favorites = current_user.favorites.create(picture_id: params[:picture_id])
+    @favorites = current_user.favorites
   end
 
   def create

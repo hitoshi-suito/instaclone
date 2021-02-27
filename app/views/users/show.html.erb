@@ -1,4 +1,9 @@
 <h1><%= @user.name %>さんのページ</h1>
 <p>メールアドレス：<%= @user.email %></p>
-
+<% if @user.image? %>
+  <p>プロフィール画像：<br>
+    <%= image_tag @user.image.url %></p>
+<% end %>
+<br>
 <%= link_to '投稿する', new_picture_path %>
+<%= link_to 'プロフィールを編集する', edit_user_path %>
