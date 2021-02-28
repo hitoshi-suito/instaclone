@@ -10,3 +10,30 @@ Rails.application.routes.draw do
     end
   end
 end
+
+
+# class ActionDispatcher
+#   def root(params)
+#     "pictures#index"
+#     pc = PicturesController.new()
+#     ar = ActionRender.new()
+#     pc.params = params
+#     ar.action(pc, "index")
+#   end
+# end
+#
+# class ActionRender
+#   def action(controller, name)
+#     controller[`name`]
+#     @instances = controller.instances
+#     render(:index, @instances)
+#   end
+#
+#   def render(name, vars = {})
+#     to 'index.html.erb', vars
+#     delete controller
+#   end
+# end
+#
+# C => V @
+# V => C params -> url, form
