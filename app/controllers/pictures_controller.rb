@@ -12,7 +12,7 @@ class PicturesController < ApplicationController
       render :new
     else
       if @picture.save
-        CreateMailer.send_when_create(@picture).deliver
+        # CreateMailer.send_when_create(@picture).deliver
         redirect_to pictures_path, notice: "投稿しました"
       else
         render :new
