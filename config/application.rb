@@ -16,5 +16,9 @@ module Instaclone
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     config.i18n.default_locale = :ja
+    config.generators do |g|
+      g.assets false
+      g.helper false
+    end
   end
 end
